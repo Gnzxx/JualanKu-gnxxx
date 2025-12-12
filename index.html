@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Digital - Layanan Terbaik & Terpercaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: #3498db;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(to right, #f8f9fa, #eef2f7);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #5a6c7d;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .highlight {
+            color: #3498db;
+            font-weight: 700;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: #3498db;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eef2f7;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #3498db;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .service-price span {
+            font-size: 16px;
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+        
+        .service-desc {
+            color: #5a6c7d;
+            margin-bottom: 25px;
+        }
+        
+        .service-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .service-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Rekber Info */
+        .rekber-info {
+            padding: 60px 0;
+            background-color: #f1f8ff;
+            text-align: center;
+        }
+        
+        .rekber-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px dashed #3498db;
+        }
+        
+        .rekber-box h3 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .rekber-box p {
+            font-size: 18px;
+            color: #5a6c7d;
+            margin-bottom: 15px;
+        }
+        
+        .rekber-fee {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-icon {
+            font-size: 50px;
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info h3 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            font-size: 18px;
+            color: #5a6c7d;
+            margin-bottom: 30px;
+        }
+        
+        .phone-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            display: block;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phone-number {
+                font-size: 24px;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo">
+                        <i class="fas fa-store"></i>
+                        JasaDigital
+                    </div>
+                    <div class="tagline">Layanan Digital Terpercaya & Berkualitas</div>
+                </div>
+                <a href="https://wa.me/6285168712907" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Jasa Digital <span class="highlight">Terpercaya</span> & <span class="highlight">Berkualitas</span></h1>
+            <p>Solusi lengkap untuk kebutuhan digital Anda dengan harga terjangkau dan pelayanan terbaik.</p>
+            <a href="https://wa.me/6285168712907" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+            </div>
+            <div class="services-grid">
+                <!-- Jasa 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 class="service-title">JOKI AFK FISH IT</h3>
+                    <div class="service-price">Rp 6.000 <span>/hari</span></div>
+                    <p class="service-desc">Layanan joki AFK fishing di game dengan sistem aman dan terpercaya.</p>
+                    <a href="https://wa.me/6285168712907?text=Halo,%20saya%20tertarik%20dengan%20layanan%20JOKI%20AFK%20FISH%20IT" class="service-btn" target="_blank">Pesan via WhatsApp</a>
+                </div>
+                
+                <!-- Jasa 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-title">MURID UP QIOSPAY</h3>
+                    <div class="service-price">Rp 5.000</div>
+                    <p class="service-desc">Layanan menjadi murid untuk upgrade QIOSPAY dengan proses cepat dan mudah.</p>
+                    <a href="https://wa.me/6285168712907?text=Halo,%20saya%20tertarik%20dengan%20layanan%20MURID%20UP%20QIOSPAY" class="service-btn" target="_blank">Pesan via WhatsApp</a>
+                </div>
+                
+                <!-- Jasa 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="service-title">JASA BIKIN LINKTREE</h3>
+                    <div class="service-price">Rp 5.000</div>
+                    <p class="service-desc">Pembuatan Linktree kustom untuk semua kebutuhan link sosial media Anda.</p>
+                    <a href="https://wa.me/6285168712907?text=Halo,%20saya%20tertarik%20dengan%20layanan%20JASA%20BIKIN%20LINKTREE" class="service-btn" target="_blank">Pesan via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rekber Info -->
+    <section class="rekber-info">
+        <div class="container">
+            <div class="rekber-box">
+                <h3><i class="fas fa-shield-alt"></i> REKENING BERSAMA (REKBER)</h3>
+                <p>Transaksi Anda lebih aman dengan sistem rekening bersama</p>
+                <p>Kami menyediakan jasa rekber untuk keamanan transaksi Anda</p>
+                <div class="rekber-fee">Fee? Hubungi WhatsApp</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>Hubungi Kami via WhatsApp</h3>
+                <p>Untuk informasi lebih lanjut, pemesanan, atau konsultasi layanan, silakan hubungi kami melalui WhatsApp</p>
+                <a href="tel:+6285168712907" class="phone-number">
+                    <i class="fas fa-phone-alt"></i> 6285168712907
+                </a>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/6285168712907" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat Sekarang
+                    </a>
+                    <a href="https://wa.me/6285168712907?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20yang%20ada" class="service-btn" target="_blank">
+                        <i class="fas fa-question-circle"></i> Tanya-tanya Dulu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-store"></i> JasaDigital
+                </div>
+                <p>Solusi lengkap untuk kebutuhan digital Anda</p>
+                <p>Layanan Terpercaya • Harga Terjangkau • Pelayanan Cepat</p>
+            </div>
+            <div class="copyright">
+                &copy; 2023 JasaDigital. Semua Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi untuk tombol WhatsApp
+        document.querySelectorAll('.whatsapp-btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Animasi untuk card layanan
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Tambahan interaksi
+        console.log("Website Jualan Siap Digunakan!");
+    </script>
+</body>
+</html>
